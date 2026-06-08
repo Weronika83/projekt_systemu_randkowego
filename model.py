@@ -10,6 +10,11 @@ class klient:
         self.lokalizacja = lokalizacja
         self.typ = typ
 
+        self.coordinates = None
+
+    def ustaw_wspolrzedne(self, lat, lon):
+        self.coordinates = (lat, lon)
+
 class pracownik:
     def __init__(self, imie, wiek, stanowisko, lokalizacja):
         self.imie = imie
