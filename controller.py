@@ -113,3 +113,22 @@ def edytuj_obiekt():
         entry_opis.insert(0, obiekt.opis)
     else:
         entry_opis.insert(0, obiekt.stanowisko)
+
+def pokaz_szczegoly():
+    zaznaczenie = listbox_klienci.curselection()
+
+    if not zaznaczenie:
+        messagebox.showwarning("Brak wyboru", "Zaznacz obiekt na liście")
+        return
+
+    i = listbox_klienci.index(ACTIVE)
+    obiekt = aktualna_lista[i]
+
+    label_imie_wartosc.config(text=obiekt.imie)
+    label_wiek_wartosc.config(text=obiekt.wiek)
+    label_lokalizacja_wartosc.config(text=obiekt.lokalizacja)
+
+    if aktualny_typ == "klient":
+        label_opis_wartosc.config(text=obiekt.opis)
+    else:
+        label_opis_wartosc.config(text=obiekt.stanowisko)

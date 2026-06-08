@@ -1,5 +1,5 @@
 from tkinter import *
-from controller import wybierz_klientow, wybierz_pracownikow
+from controller import wybierz_klientow, wybierz_pracownikow, pokaz_szczegoly
 
 root = Tk()
 root.title("Portal randkowy")
@@ -33,5 +33,27 @@ entry_lokalizacja.pack()
 Button(root, text="Dodaj").pack()
 Button(root, text="Edytuj").pack()
 Button(root, text="Usuń").pack()
+
+# SZCZEGÓŁY
+
+Label(root, text="Szczegóły").pack()
+
+Label(root, text="Imię:").pack()
+label_imie_wartosc = Label(root, text="-")
+label_imie_wartosc.pack()
+
+Label(root, text="Wiek:").pack()
+label_wiek_wartosc = Label(root, text="-")
+label_wiek_wartosc.pack()
+
+Label(root, text="Opis:").pack()
+label_opis_wartosc = Label(root, text="-")
+label_opis_wartosc.pack()
+
+Label(root, text="Lokalizacja:").pack()
+label_lokalizacja_wartosc = Label(root, text="-")
+label_lokalizacja_wartosc.pack()
+
+Button(root, text="Pokaż szczegóły", command=pokaz_szczegoly).pack()
 
 root.mainloop()
