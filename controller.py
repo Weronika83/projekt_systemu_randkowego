@@ -126,6 +126,8 @@ def zapisz_zmiany():
     else:
         aktualna_lista[i].stanowisko = entry_opis.get()
 
+    aktualna_lista[i].coordinates = aktualna_lista[i].get_coordinates()
+
     if aktualna_lista[i].marker:
         aktualna_lista[i].marker.delete()
 
