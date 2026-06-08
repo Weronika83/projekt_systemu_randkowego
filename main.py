@@ -3,6 +3,9 @@ import tkintermapview
 import controller
 from controller import wybierz_klientow, wybierz_pracownikow, pokaz_szczegoly, dodaj_randke, pokaz_randki
 
+#----------------LOGOWANIE----------------
+from logowanie import pokaz_okno_logowania
+
 root = Tk()
 root.title("Portal randkowy")
 root.geometry("1100x760")
@@ -85,4 +88,6 @@ controller.label_lokalizacja_wartosc = label_lokalizacja_wartosc
 controller.map_widget = map_widget
 
 pokaz_randki()
-root.mainloop()
+
+if __name__ == "__main__":
+    pokaz_okno_logowania()
