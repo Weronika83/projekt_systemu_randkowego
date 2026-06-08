@@ -1,5 +1,5 @@
 from tkinter import *
-from controller import wybierz_klientow, wybierz_pracownikow, pokaz_szczegoly
+from controller import wybierz_klientow, wybierz_pracownikow, pokaz_szczegoly, dodaj_randke, pokaz_randki
 
 root = Tk()
 root.title("Portal randkowy")
@@ -55,5 +55,27 @@ label_lokalizacja_wartosc = Label(root, text="-")
 label_lokalizacja_wartosc.pack()
 
 Button(root, text="Pokaż szczegóły", command=pokaz_szczegoly).pack()
+
+
+# RANDKI
+
+Label(root, text="Lista randek").pack()
+
+listbox_randki = Listbox(root, width=40, height=5)
+listbox_randki.pack()
+
+Label(root, text="Klient").pack()
+entry_klient_randka = Entry(root)
+entry_klient_randka.pack()
+
+Label(root, text="Partner").pack()
+entry_osoba_randka = Entry(root)
+entry_osoba_randka.pack()
+
+Label(root, text="Data").pack()
+entry_data_randka = Entry(root)
+entry_data_randka.pack()
+
+Button(root, text="Dodaj randkę", command=dodaj_randke).pack()
 
 root.mainloop()
