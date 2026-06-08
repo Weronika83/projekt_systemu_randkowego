@@ -132,3 +132,24 @@ def pokaz_szczegoly():
         label_opis_wartosc.config(text=obiekt.opis)
     else:
         label_opis_wartosc.config(text=obiekt.stanowisko)
+
+def dodaj_randke():
+    klient_randka = entry_klient_randka.get()
+    osoba_randka = entry_osoba_randka.get()
+    data_randka = entry_data_randka.get()
+
+    if klient_randka == "" or osoba_randka == "" or data_randka == "":
+        messagebox.showwarning("Brak danych","Uzupełnij wszystkie pola")
+        return
+
+    randki.append(randka(klient_randka, osoba_randka, data_randka))
+    pokaz_randki()
+
+    entry_klient_randka.delete(0, END)
+    entry_osoba_randka.delete(0, END)
+    entry_data_randka.delete(0, END)
+
+def pokaz_randki():
+    listbox_randki.delete(0, END)
+    for r in randki:
+        listbox_randki.insert(END, f"{r.klient} ❤ {r.osoba} | {r.data}")
