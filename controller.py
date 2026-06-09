@@ -156,6 +156,13 @@ def pokaz_szczegoly():
     else:
         label_opis_wartosc.config(text=aktualna_lista[i].stanowisko)
 
+    for osoba in klienci:
+        if osoba.marker: osoba.marker.delete()
+    for osoba in pracownicy:
+        if osoba.marker: osoba.marker.delete()
+
+    aktualna_lista[i].marker = map_widget.set_marker(aktualna_lista[i].coordinates[0], aktualna_lista[i].coordinates[1], text=aktualna_lista[i].imie)
+
     map_widget.set_position(aktualna_lista[i].coordinates[0], aktualna_lista[i].coordinates[1])
     map_widget.set_zoom(12)
 
